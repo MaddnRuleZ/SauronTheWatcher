@@ -27,9 +27,8 @@ class Database:
     def set_key_value(self, table_name, key, value):
         cursor = self.conn.cursor()
         cursor.execute(f'''
-            INSERT INTO {table_name} (item_key, item_value)
-            VALUES (?, ?)
-        ''', (key, value))
+            UPDATE {table_name} SET item_key = ? WHERE item_key = ?
+        ''', (value, key))
         self.conn.commit()
 
     def get_value_key_value_store(self, table_name, key):
