@@ -6,7 +6,7 @@ class Database:
     def __init__(self):
         print("Database init")
         self.server = "obrechtstudios.de"
-        self.database = "WhiteWidow"
+        self.database = "AvA"
         self.username = "princeofdarkness"
         self.password = "dxr74z3H69"
         self.driver = "ODBC Driver 17 for SQL Server"
