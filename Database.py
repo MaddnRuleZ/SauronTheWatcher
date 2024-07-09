@@ -29,8 +29,6 @@ class Database:
         cursor.execute(f'''
             INSERT INTO {table_name} (item_key, item_value)
             VALUES (?, ?)
-            ON CONFLICT(item_key) DO UPDATE SET
-            item_value = excluded.item_value
         ''', (key, value))
         self.conn.commit()
 
